@@ -1,0 +1,122 @@
+generator client {
+ provider = "prisma-client-js"
+ engineType = "client"
+}
+datasource db {
+ provider = "mysql"
+ url = env("DATABASE_URL")
+}
+model User {
+ id String @id @default(uuid())
+ email String @unique
+ name String
+ password String
+ role String @default("CUSTOMER")
+ sessionVersion Int @default(0)
+ blocked Boolean @default(false)
+ createdAt DateTime @default(now())
+ orders Order[]
+ wishes Wish[]
+}
+model Product {
+ id String @id @default(uuid())
+ slug String @unique
+ name String
+ category String
+ type String @default("PHYSICAL")
+ brand String
+ description String @db.Text
+ image String
+ price Int
+ oldPrice Int?
+ stock Int @default(0)
+ featured Boolean @default(false)
+ notes String?
+ concentration String?
+ variants Variant[]
+ wishes Wish[]
+ createdAt DateTime @default(now())
+}
+model Variant {
+ id String @id @default(uuid())
+ productId String
+ product Product @relation(fields:[productId],references:[id],onDelete:Cascade)
+ name String
+ sku String @unique
+ price Int
+ stock Int
+}
+model Wish {
+ userId String
+ productId String
+ user User @relation(fields:[userId],references:[id],onDelete:Cascade)
+ product Product @relation(fields:[productId],references:[id],onDelete:Cascade)
+ @@id([userId,productId])
+}
+model Order {
+ id String @id @default(uuid())
+ code String @unique
+ userId String?
+ user User? @relation(fields:[userId],references:[id])
+ name String
+ email String
+ phone String
+ city String?
+ address String?
+ delivery String
+ payment String
+ status String @default("PENDING")
+ total Int
+ shipping Int
+ proof String?
+ carrier String?
+ tracking String?
+ expiresAt DateTime
+ createdAt DateTime @default(now())
+ items OrderItem[]
+ events OrderEvent[]
+}
+model OrderItem {
+ id String @id @default(uuid())
+ orderId String
+ order Order @relation(fields:[orderId],references:[id],onDelete:Cascade)
+ productId String
+ variantId String?
+ name String
+ quantity Int
+ price Int
+ type String
+}
+model OrderEvent {
+ id String @id @default(uuid())
+ orderId String
+ order Order @relation(fields:[orderId],references:[id],onDelete:Cascade)
+ status String
+ createdAt DateTime @default(now())
+}
+model Audit {
+ id String @id @default(uuid())
+ userId String
+ action String
+ target String
+ ip String
+ createdAt DateTime @default(now())
+}
+model Setting {
+ key String @id
+ value String @db.Text
+}
+model RateLimit {
+ key String @id
+ count Int @default(1)
+ expiresAt DateTime
+}
+model DownloadLog {
+ id String @id @default(uuid())
+ orderId String
+ productId String
+ userId String
+ ip String
+ createdAt DateTime @default(now())
+ @@index([orderId,productId])
+}

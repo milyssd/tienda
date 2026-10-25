@@ -1,0 +1,57 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 500" fill="none"><defs>
+<linearGradient id="metal" x1="0" y1="0" x2="1" y2=".8"><stop stop-color="#80878a"/><stop offset=".13" stop-color="#30373b"/><stop offset=".4" stop-color="#11161a"/><stop offset=".68" stop-color="#3d4448"/><stop offset="1" stop-color="#0a0e12"/></linearGradient>
+<linearGradient id="shell" x1=".1" y1="0" x2=".9" y2="1"><stop stop-color="#50595e"/><stop offset=".25" stop-color="#30383e"/><stop offset=".62" stop-color="#161c22"/><stop offset="1" stop-color="#080c11"/></linearGradient>
+<linearGradient id="black" x1="0" y1="0" x2="1" y2=".5"><stop stop-color="#31373b"/><stop offset=".3" stop-color="#0b1016"/><stop offset=".65" stop-color="#1a2228"/><stop offset="1" stop-color="#05080d"/></linearGradient>
+<linearGradient id="edge" x1="0" y1="0" x2=".85" y2="1"><stop stop-color="#cbd1d2"/><stop offset=".25" stop-color="#647078"/><stop offset=".55" stop-color="#1b252c"/><stop offset=".9" stop-color="#7b8589"/><stop offset="1" stop-color="#262d35"/></linearGradient>
+<linearGradient id="light" x1="0" y1="0" x2="0" y2="1"><stop stop-color="#e2ff8e"/><stop offset=".5" stop-color="#b6ea40"/><stop offset="1" stop-color="#739b20"/></linearGradient>
+<radialGradient id="rubber" cx=".35" cy=".22" r=".8"><stop stop-color="#3b4144"/><stop offset=".55" stop-color="#171d20"/><stop offset="1" stop-color="#060a0e"/></radialGradient>
+<pattern id="mesh" width="4" height="4" patternUnits="userSpaceOnUse"><circle cx="1" cy="1" r=".7" fill="#090e12"/><circle cx="3" cy="3" r=".5" fill="#6f797e" opacity=".4"/></pattern>
+<pattern id="grip" width="4" height="4" patternUnits="userSpaceOnUse" patternTransform="rotate(45)"><path d="M0 0V4" stroke="#5b6267" stroke-opacity=".35" stroke-width="1"/></pattern>
+<filter id="shadow" x="-50%" y="-50%" width="200%" height="200%"><feGaussianBlur stdDeviation="10"/></filter>
+<filter id="glow" x="-100%" y="-100%" width="300%" height="300%"><feGaussianBlur stdDeviation="3"/></filter>
+</defs>
+<ellipse cx="260" cy="434" rx="137" ry="15" fill="#050909" opacity=".2" filter="url(#shadow)"/>
+<g transform="rotate(8 250 250)">
+<!-- A padded steel headband, with visible outer and inner rails. -->
+<path d="M111 262L112 192C113 29 388 28 394 194L394 271" stroke="#050a0f" stroke-width="40"/>
+<path d="M111 255L112 193C113 36 388 36 394 194L394 266" stroke="url(#metal)" stroke-width="33"/>
+<path d="M98 195C99 17 407 22 409 196" stroke="#727d83" stroke-width="1.5" opacity=".85"/>
+<path d="M131 183C150 65 352 64 375 183" stroke="#080e12" stroke-width="16" stroke-linecap="round"/>
+<path d="M137 175C165 75 341 77 369 177" stroke="#3e474c" stroke-width="7" stroke-linecap="round"/>
+<path d="M156 131C202 76 309 77 352 133" stroke="#747e80" stroke-width="1" opacity=".5"/>
+<path d="M104 205L103 269M395 206L398 266" stroke="#080f13" stroke-width="18"/>
+<path d="M104 211L103 262M394 211L398 262" stroke="url(#edge)" stroke-width="9"/>
+<path d="M101 217h7m-7 10h7m-7 10h7m286-20h7m-7 10h7m-6 10h7" stroke="#0a1116" stroke-width="2"/>
+<!-- Far ear cushion and angled side casing. -->
+<g transform="rotate(-9 133 315)">
+<rect x="77" y="244" width="100" height="162" rx="45" fill="#070c12"/>
+<rect x="82" y="246" width="83" height="157" rx="40" fill="url(#shell)" stroke="#56616a" stroke-width="1.1"/>
+<rect x="137" y="245" width="48" height="161" rx="23" fill="url(#rubber)" stroke="#080c11" stroke-width="3"/>
+<rect x="145" y="259" width="26" height="133" rx="13" fill="#080c12"/>
+<rect x="148" y="268" width="19" height="115" rx="9" fill="url(#mesh)"/>
+<path d="M101 259C86 283 87 360 102 384" stroke="#889297" stroke-opacity=".55" stroke-width="1.4"/>
+<path d="M117 267V376" stroke="#121b23" stroke-width="2"/>
+<circle cx="103" cy="368" r="3" fill="#090f16" stroke="#899390" stroke-width=".8"/>
+<rect x="97" y="343" width="7" height="13" rx="3" fill="#080d12" stroke="#627076" stroke-width=".6"/>
+</g>
+<!-- Main ear cup with dense acoustic mesh, brushed rim, and lime edge lighting. -->
+<g transform="rotate(10 364 320)">
+<rect x="312" y="242" width="94" height="168" rx="42" fill="url(#rubber)" stroke="#080d12" stroke-width="4"/>
+<rect x="302" y="250" width="35" height="153" rx="17" fill="#090e14" stroke="#3f484b" stroke-width="1"/>
+<rect x="311" y="264" width="17" height="124" rx="8" fill="url(#mesh)"/>
+<rect x="327" y="242" width="101" height="169" rx="47" fill="url(#metal)" stroke="#778186" stroke-width="1.5"/>
+<rect x="335" y="251" width="85" height="151" rx="40" fill="#0a1118" stroke="#070d13" stroke-width="2"/>
+<rect x="338" y="254" width="79" height="145" rx="37" fill="url(#shell)"/>
+<rect x="344" y="262" width="67" height="129" rx="31" fill="url(#mesh)" opacity=".65"/>
+<path d="M359 255C337 268 335 286 335 321V354C335 381 351 398 371 403" stroke="#bde96b" stroke-width="2" opacity=".85"/>
+<path d="M360 254C338 268 334 292 334 324V350" stroke="#bde96b" stroke-width="4" opacity=".22" filter="url(#glow)"/>
+<path d="M394 260C413 275 417 307 415 348" stroke="#98a5ab" stroke-width="1.2" opacity=".6"/>
+<path d="M365 311L380 337L393 309M365 311V337M393 309V337" stroke="#cef58b" stroke-width="2.7" stroke-linecap="square"/>
+<path d="M366 367h22" stroke="#717f87" stroke-width="1"/>
+<circle cx="380" cy="382" r="1.5" fill="#c6f27e"/>
+</g>
+<!-- Flexible detachable microphone. -->
+<path d="M100 370C60 397 87 433 177 432L223 424" stroke="#050b11" stroke-width="11" stroke-linecap="round"/>
+<path d="M99 370C61 398 89 429 177 429L220 422" stroke="#55636a" stroke-width="2" stroke-linecap="round"/>
+<g transform="rotate(-11 232 423)"><rect x="211" y="415" width="50" height="19" rx="9" fill="url(#metal)" stroke="#374751" stroke-width="1"/><rect x="232" y="419" width="22" height="11" rx="5" fill="url(#mesh)"/><path d="M216 420h7" stroke="#b9e874" stroke-width="2" stroke-linecap="round"/></g>
+</g></svg>

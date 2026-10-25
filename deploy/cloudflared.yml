@@ -1,0 +1,7 @@
+# Replace placeholders with your tunnel ID, credentials location and domain.
+tunnel: YOUR_TUNNEL_UUID
+credentials-file: /secure/path/YOUR_TUNNEL_UUID.json
+ingress:
+ - hostname: tienda.example.com
+   service: http://127.0.0.1:8080
+ - service: http_status:404
